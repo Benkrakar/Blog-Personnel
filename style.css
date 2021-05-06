@@ -1,0 +1,89 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #CACACA;
+    
+}
+h1,h2,h3,h4,h5{
+    font-weight: 700;
+}
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------start css of navbar section---------------------------------------------------------------> */
+.navbar-brand{
+    color: #7C8590;
+
+}
+.navbar {
+    background-color: #1D2732 !important;
+}
+.dropdown-menu{
+    background-color: #1D2732 !important;
+
+}
+.dropdown-item:hover{
+    background-color: #737A81  !important;
+
+}
+.navbar a{
+    color: #7C8590;
+    
+}
+.navbar a:hover{
+    border-radius: 10px;
+    background-color:#737A81 ;
+    color: black !important;
+}
+
+.search {
+    background-color: #737A81;
+}
+.search:focus{
+    color: black;
+    background-color: #737A81 !important;
+}
+.search::placeholder {
+    color: black;
+  }
+.search-button{
+    background-color: #737A81;
+    color: black;
+    border: black;
+}
+.search-button:hover{
+    background-color: #101820 ;
+    color: #CACACA;
+}
+.icon{
+    color: blanchedalmond !important;
+    width: 1rem;
+    height: 1rem;
+}
+
+
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------End css of navbar section----------------------------------------------------------------> */
+.page-footer{
+    background-color: #1D2732;
+}
+.page-footer i {
+    color: white;
+}
+.about{
+    background-color: #101820;
+    height: 100%;
+    width: 100%;
+}
+.about-section{
+    padding-bottom: 9%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.about-title{
+    color: #CACACA;
+}
