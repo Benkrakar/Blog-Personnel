@@ -54,4 +54,5 @@ include_once('navbar.php');
     
     <?php
 include_once('footer.php');
+include_once('foot.php');
 ?>

@@ -31,7 +31,7 @@
               <a class="nav-link" href="#">benkrakar <span class="sr-only">(current)</span></a>
             </li>
             <div class="icon mt-2 mr-3" >
-                <a href="sdf">
+                <a href="./login.php">
                     <i class="fas fa-sign-out-alt"></i>    
                             </a>
             </div>          
