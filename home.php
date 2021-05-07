@@ -6,8 +6,8 @@ include_once('navbar.php');
  <section class="about text-center ">
   
   <div  >
-          <h1 class="article-title pt-5">LEARN PROGRAMMING LAGUAGES </h1>
-          <div class="text-justify pl-5 pr-5 pt-5 article-text">
+          <h1 class="home-title pt-5">LEARN PROGRAMMING LAGUAGES </h1>
+          <div class="text-justify pl-5 pr-5 pt-5 home-text">
            <h5> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!</h5>
           </div>
         
