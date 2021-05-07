@@ -6,7 +6,7 @@ include_once('navbar.php');
         <div class=" about-title d-flex justify-content-center pt-5">
             <h1>BENKRAKAR WALID</h1>
         </div>
-        <div class=" row about-section ">
+        <div class=" row about-section col-sm-12 ">
             <div class=" col-lg-1 col-md-1 mt-5"></div>
 
                 <div class=" col-lg-4 col-md-12 mt-5 ">
@@ -16,7 +16,7 @@ include_once('navbar.php');
                 </div>
                 <div class=" col-lg-1 col-md-1 mt-5"></div>
 
-                <div class=" col-lg-5 col-md-12 mt-5">
+                <div class=" col-lg-5 col-md-12 col-sm-12 ml-5 container-fluid mt-5">
                             <div class="mt-5 ">
                                 Lorem Ipsum Dolor Sit Amet, Consectetur 
                                 Adipisicing Elit, Sed Do Eiusmod Tempor 
