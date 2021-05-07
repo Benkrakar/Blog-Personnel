@@ -9,7 +9,7 @@
 
     <!-- Grid column -->
     <div class="col-md-12 py-3 d-flex justify-content-center ">
-      <div class="mb-5 ">
+      <div >
 
         <!-- Facebook -->
         <a class="fb-ic">

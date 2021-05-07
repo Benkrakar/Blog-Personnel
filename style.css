@@ -79,7 +79,7 @@ h1,h2,h3,h4,h5{
 ---------------------------------------------start css of about page-------------------------------------------------------------------> */
 .about{
     background-color: #101820;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 .about-section{
@@ -160,3 +160,21 @@ input:-moz-placeholder {
 /* <!--------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------end css of login page---------------------------------------------------------------------> */
 
+.card-items  img{
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+
+}
+.card{
+    width: 30rem;
+    background-color: #1D2732;
+    border: solid 1px #707070;
+    border-radius: 1rem;
+
+}
+.card a {
+    background-color: #101820;
+    border: none;
+    width: 30%;
+}
