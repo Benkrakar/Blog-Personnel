@@ -37,6 +37,7 @@ h1,h2,h3,h4,h5{
     background-color: #737A81;
 }
 .search:focus{
+    outline: none;
     color: black;
     background-color: #737A81 !important;
 }
@@ -194,3 +195,50 @@ input:-moz-placeholder {
     height: 120px;
     border-radius: 2rem;
 }
+
+
+
+
+
+
+.table > thead > tr > th ,  td{
+    border-top:none ;
+    border-bottom:1px solid #707070;
+  }
+
+
+.login-informations {
+    background-color: #1D2732;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    color: #E4E4E4;
+    
+}
+.articl-btn{
+    background-color: #28323F;
+    border: none;
+}
+
+.form-control{
+    border: none;
+    background-color: #36404D;
+    color: blanchedalmond;
+}
+.form-control:focus{
+    border: none;
+    background-color: #36404D;
+    color: blanchedalmond;
+}
+
+
+.article-card{
+    background-color: #101820;
+    height: 100%;
+    width: 100%;
+}
+
+.articles > img{
+border-radius: 1rem;
+}
+
