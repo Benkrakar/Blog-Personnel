@@ -11,6 +11,7 @@ if (isset($_GET['article_id'])) {
 ?>
 <section class="about text-center ">
       <?php $person->articleview($id);?>
+      
 
  </section>
  <?php

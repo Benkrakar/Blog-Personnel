@@ -3,14 +3,26 @@ include_once('head.php');
 include_once('navbar.php');
 
 include_once('dbConnection.php');
+session_start(); 
+if ( !$_SESSION['login']){
+  header('Location: login.php');
+  die;
+}
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit']) && isset($_FILES['Img'])){
+  $Img =  $_FILES['Img']['name'];
+  $Img_size =  $_FILES['Img']['size'];
+  $tmp_name =  $_FILES['Img']['tmp_name'];
+  $Img_type = $_FILES['Img']['type'];
+  $error =  $_FILES['Img']['error'];
+
+
   $articleName = $_POST['ArticleName'];
   $categorie = $_POST['catégorie'];
   $Description = $_POST['description'];
   $Datedecreation = $_POST['datedecreation'];
-  $Img = $_POST['img'];
-    $Textz = $_POST['textz'];
+  $Textz = $_POST['textz'];
+
 if ($person->creat($articleName,$categorie,$Description,$Datedecreation,$Img,$Textz)){
     header('Location: dashboard.php');
 
@@ -21,8 +33,7 @@ if(isset($_POST['update-btn'])){
   $categorie = $_POST['catégorie'];
   $Description = $_POST['description'];
   $Datedecreation = $_POST['datedecreation'];
-  $Img = $_POST['img'];
-    $Textz = $_POST['textz'];
+  $Textz = $_POST['textz'];
 
     if ($person->update($id,$articleName,$categorie,$Description,$Datedecreation,$Img,$Textz)){
       header('Location: dashboard.php');
@@ -35,11 +46,31 @@ if (isset($_GET['edit_id'])) {
 }
 }
 
+   
+if(isset($_GET['delete-id'])){
+  if(isset($_POST['delete'])){
+    $id = $_GET['delete_id'];
+
+ 
+
+if ($person->delete($id)){
+  header('Location: dashboard.php');
+}else {
+  echo ' failed';
+}
+}
+}
+
 ?>
+
+
+
 <section class="about">
+
+
+
+
   <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
     
     <div class="modal-dialog" role="document">
       <div class="modal-content login-informations ">
@@ -48,11 +79,11 @@ if (isset($_GET['edit_id'])) {
               <button type="button" class="close" aria-label="Close" data-dismiss="modal">
                       <span style="color:white;" aria-hidden="true">&times;</span>
                   </button>
-                  <form  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                  <form  method="POST" enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>">
   
   
                       <div class="articl-form ">
-                          <input type="text"  name="ArticleName" class="form-control" id="recipient-name" placeholder="article name" value=" value="<?php echo $articleName?>" required>
+                          <input type="text"  name="ArticleName" class="form-control" id="recipient-name" placeholder="article name" required>
                       </div>
                        
                       <div class="articl-form mt-4">
@@ -63,10 +94,14 @@ if (isset($_GET['edit_id'])) {
                     </div>
                       <div class="articl-form mt-4">
                           <label for="recipient-name" class="col-form-label">article-img</label>
-                          <input type="text" name="img" class="form-control"  >
+                          <input type="file" name="Img" class="form-control"  >
                       </div>
                       <div class="articl-form">
-                        <textarea name="textz" class="form-control mt-4" id="message-text" placeholder="Hint Text for Text Area" required></textarea>
+                      <textarea class="form-control mt-5"  name="textz" class="form-control mt-4" id="message-text" placeholder="Hint Text for Text Area" required >
+
+                        
+                        </textarea>
+
                     </div>
                       <div class="farticl-form text-center mt-4">
                         <label for="recipient-name" class="col-form-label">categorie :</label>
@@ -93,63 +128,9 @@ if (isset($_GET['edit_id'])) {
   </div>
 
 
-
-
-
-  <div class="modal editmodal fade  " id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
-    
-<div class="modal-dialog" role="document">
-  <div class="modal-content login-informations ">
-
-    <div class="modal-body ">
-          <button type="button" class="close" aria-label="Close" data-dismiss="modal">
-                  <span style="color:white;" aria-hidden="true">&times;</span>
-              </button>
-              <form  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-
-
-                  <div class="articl-form ">
-                      <input type="text"  name="ArticleName" class="form-control" id="recipient-name" placeholder="article name"  required>
-                  </div>
-                   
-                  <div class="articl-form mt-4">
-                      <input type="text" name="description" class="form-control" id="recipient-name" placeholder="description" required>
-                  </div>
-                  <div class="articl-form mt-4">
-                    <input type="text" name="datedecreation" class="form-control" placeholder="date de creation"  required>
-                </div>
-                  <div class="articl-form mt-4">
-                      <label for="recipient-name" class="col-form-label">article-img</label>
-                      <input type="text" name="img" class="form-control"  >
-                  </div>
-                  <div class="articl-form">
-                    <textarea name="textz" class="form-control mt-4" id="message-text" placeholder="Hint Text for Text Area" required></textarea>
-                </div>
-                  <div class="farticl-form text-center mt-4">
-                    <label for="recipient-name" class="col-form-label">categorie :</label>
-                      <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" name="catégorie" value="front-end" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" required>
-                          <label class="custom-control-label" for="customRadioInline1">Front-end</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" name="catégorie" value="back-end" id="customRadioInline2" name="customRadioInline2" class="custom-control-input" required>
-                          <label class="custom-control-label" for="customRadioInline2">Back-end</label>
-                      </div>
-                    
-                  </div>
-                      <div class="d-flex justify-content-center mr-auto mt-4">
-                              <button name="submit" type="submitt" class="btn btn-info articl-btn " data-mdb-ripple-color="dark">done</button>
-                         </div>
-              </form>
-
-
-    </div>
  
-  </div>
-</div>
-</div>
+
+
   <!--------------------------------------------------------------------------------------------------------------------------------------
   --------------------------------end modal----------------------------------------------------------------------------------------------->
       

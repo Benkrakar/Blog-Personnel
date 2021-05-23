@@ -2,7 +2,11 @@
 include_once('head.php');
 include_once('navbar.php');
 include_once('dbConnection.php');
-
+session_start(); 
+if ( !$_SESSION['login']){
+  header('Location: login.php');
+  die;
+}
 ?>
 
  <section class="article-card text-center ">
@@ -15,10 +19,11 @@ include_once('dbConnection.php');
         
       </div>
     </div>
-    <div class="d-flex align-items-lg-end h-100 pb-4 mt-4 ">
-      <div class="d-flex justify-content-center col my-auto ">
+    <div class=" row col-12 justify-content-md-center ">
+      <div class="col-8 row ">
               
       <?php $person->articlesview();?>
+      
 
               
       </div>

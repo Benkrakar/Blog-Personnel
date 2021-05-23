@@ -20,8 +20,8 @@ include_once('head.php');
                 Technologies
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Front-end</a>
-                <a class="dropdown-item" href="#">Back-end</a>               
+                <a class="dropdown-item" href="articles.php">Front-end</a>
+                <a class="dropdown-item" href="articles.php">Back-end</a>               
             </li>
             <li class="nav-item">
               <a class="nav-link disabled " href="./about.php">About</a>
@@ -33,10 +33,10 @@ include_once('head.php');
           </form>
           <ul class="navbar-nav ">
             <li class="nav-item active mr-2">
-              <a class="nav-link" href="#">benkrakar <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="dashboard.php">benkrakar <span class="sr-only">(current)</span></a>
             </li>
             <div class="icon mt-2 mr-3" >
-                <a href="./login.php">
+                <a href="./logout.php">
                     <i class="fas fa-sign-out-alt"></i>    
                             </a>
             </div>          

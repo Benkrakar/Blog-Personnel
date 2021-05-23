@@ -1,5 +1,26 @@
 <?php 
 include_once('head.php');
+include_once('dbConnection.php');
+session_start();
+
+if(isset($_POST['submit'])){
+  $Username =  $_POST['username'];
+  $Password =  $_POST['password'];
+  
+if ($person->login($Username,$Password)){
+
+              
+}else {
+?>
+<div class="p-3   bg-secondary text-white text-center">incorrect informations</div>
+
+
+
+<?php
+}
+}
+
+
 ?>
 <section class="login-section">
   <div class="d-flex h-75 w-100  ">
@@ -15,14 +36,14 @@ include_once('head.php');
             <h2>BENKRAKAR WALID</h2>
           </div>
           <div class="col-12 form-input ">
-            <form action="" >
+          <form  method="POST"  action="<?php echo $_SERVER['PHP_SELF']; ?>">
               <div class="form-group">
-              <input type="text" class="form-contol text-center" placeholder="username">
+              <input type="text" name="username" class="form-contol text-center" placeholder="username">
               </div>
               <div class="form-group">
-              <input type="password" class="form-contol text-center" placeholder="password">
+              <input type="password" name="password" class="form-contol text-center" placeholder="password">
               </div>
-              <button type="submit" class="btn login-btn btn-success mt-2">
+              <button type="submit" name="submit" class="btn login-btn btn-success mt-2">
               Login
               </button>
             </form>
@@ -35,6 +56,7 @@ include_once('head.php');
  </div>
   </div>
 </section>
+
 <?php 
 include_once('foot.php');
 ?>

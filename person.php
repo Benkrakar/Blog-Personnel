@@ -18,8 +18,8 @@ class PersonDB{
             $stmt->bindparam(':categorie',$categorie);
             $stmt->bindparam(':description',$Description);
             $stmt->bindparam(':date',$Datedecreation);
-            $stmt->bindparam(':img',$Img);
             $stmt->bindparam(':text',$Textz);
+            $stmt->bindparam(':img',$Img);
             $stmt->execute();
               return true;
                 } catch (PDOException $e)  {
@@ -30,13 +30,13 @@ class PersonDB{
 
     public function update($id,$articleName,$categorie,$Description,$Datedecreation,$Img,$Textz){
         try {
-        $stmt=$this->db->prepare("UPDATE `articles` SET `ArticleName`=:name, `catégorie`=:categorie, `description`=:description, `datedecreation`=:date, `img`=:img, `text`=:textWHERE  `ID`=:id");
+        $stmt=$this->db->prepare("UPDATE `articles` SET `ArticleName`=:name, `catégorie`=:categorie, `description`=:description, `datedecreation`=:date, `img`=:img, `text`=:text WHERE  `ID`=:id");
             $stmt->bindparam(':name',$articleName);
             $stmt->bindparam(':categorie',$categorie);
             $stmt->bindparam(':description',$Description);
             $stmt->bindparam(':date',$Datedecreation);
-            $stmt->bindparam(':img',$Img);
             $stmt->bindparam(':text',$Textz);
+            $stmt->bindparam(':img',$Img);
          $stmt->bindparam(":id",$id);
 
         $stmt->execute();
@@ -46,8 +46,19 @@ class PersonDB{
             return false;
         }
     }
+
+    public function delete($id){
+        $stmt=$this->db->prepare("DELETE FROM `articles` WHERE `ID`=:id");
+        $stmt->bindparam(":id",$id);
+        $stmt->execute();
+        return true;
+    
+    }
+
+
+
     public function getID($id){
-        $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE id=:id");
+        $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE ID =:id");
         $stmt->execute(array(":id"=>$id));
         $editRow = $stmt->fetch(PDO::FETCH_ASSOC);
         return $editRow;
@@ -60,15 +71,17 @@ class PersonDB{
                 while($row=$stmt->fetch(PDO::FETCH_ASSOC)){         //to get the informtions in assoc array
                     ?>
                    <tr>
-                        <th><?php echo $row['ID'];?></th>
+
+                        <th ><?php echo $row['ID'];?></th>
                         <td><?php echo $row['ArticleName'];?></td>
                         <td><?php echo $row['catégorie'];?></td>
                         <td><?php echo $row['description'];?></td>
                         <td><?php echo $row['datedecreation'];?></td>
                         
                         <td>
-                            <a class="pr-2" name="modal" data-mdb-ripple-color="dark" data-toggle="editModal" data-target="#editModal" href="?aricle_id=<?php echo $row['ID'];?>" > <i class="icon fa fa-edit"></i> </a>
-                            <a class="pl-2"   > <i class="icon fa fa-trash"></i> </a>
+                                <a class="icon fa fa-edit" href="edit.php?edit_id=<?php echo $row['ID'];?>"></a>
+                                <a  href="delete.php?delete_id=<?php echo $row['ID'];?>" id="button"  class="icon fa fa-trash pl-2" > </a>
+                                                
                         </td>
                     </tr>
                     <?php
@@ -81,8 +94,9 @@ class PersonDB{
         if ($stmt->rowCount()>0){
             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){         //to get the informtions in assoc array
                 ?>
-                    <div class="card articles ml-3" style="width: 18rem;">
-                <img class="card-img-top" src="./ressources/imgs/bootstrap.png" alt="Card image cap">
+                    <div class="card articles ml-3 mt-4 mb-4" style="width: 18rem;">
+                <img class="card-img-top" src="./ressources/imgs/<?php echo $row['img'];?>" alt="Card image cap">
+                
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['ArticleName'];?></h5>
                         <p class="card-text"><?php echo $row['description'];?></p>
@@ -106,7 +120,7 @@ class PersonDB{
                 <div class="d-flex justify-content-center col my-auto ">
                         <div class="article-sec mt-5 row  p-3">
                         <div class="article-img justify-content-sm-between d-flex">
-                            <img src="./ressources/imgs/bootstrap.png" alt="">
+                            <img src="./ressources/imgs/<?php echo $row['img'];?>" alt="">
                             <p class="text-justify pl-3"><?php echo $row['description'];?> </p>
                         </div>
                         <div>
@@ -117,6 +131,26 @@ class PersonDB{
                     <?php
                 }
             }   
+
+
+    public function login($Username,$Password){
+        $stmt=$this->db->prepare("SELECT * FROM `users` WHERE `username`=:user and `password`=:pass");
+        $stmt->bindparam(":user",$Username);
+        $stmt->bindparam(":pass",$Password);
+        $stmt->execute();
+
+            if( $stmt->rowCount () == 1){
+                $_SESSION['login'] = TRUE;
+                header('Location: home.php');
+
+            }
+    
+            
+    }        
+
+
+
+
     }
 
 

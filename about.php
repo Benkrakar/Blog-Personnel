@@ -1,6 +1,11 @@
 <?php 
 include_once('head.php');
 include_once('navbar.php');
+session_start(); 
+if ( !$_SESSION['login']){
+  header('Location: login.php');
+  die;
+}
 ?>
 <div class="about">
         <div class=" about-title d-flex justify-content-center pt-5">

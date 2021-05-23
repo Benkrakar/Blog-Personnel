@@ -1,6 +1,11 @@
 <?php 
 include_once('head.php');
 include_once('navbar.php');
+session_start(); 
+if ( !$_SESSION['login']){
+  header('Location: login.php');
+  die;
+}
 ?>
  
  <section class="about text-center ">
@@ -20,7 +25,7 @@ include_once('navbar.php');
               <img class="card-img-top" src="./ressources/imgs/cover.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <a href="#" class="btn btn-primary">Go </a>
+                <a href="articles.php" class="btn btn-primary">Go </a>
               </div>
             </div>
           </div>
@@ -30,7 +35,7 @@ include_once('navbar.php');
               <img class="card-img-top" src="./ressources/imgs/backend.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <a href="#" class="btn btn-primary">Go </a>
+                <a href="articles.php" class="btn btn-primary">Go </a>
               </div>
             </div>
           </div>
