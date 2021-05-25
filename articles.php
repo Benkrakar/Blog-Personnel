@@ -9,7 +9,7 @@ if ( !$_SESSION['login']){
 }
 ?>
 
- <section class="article-card text-center ">
+ <section class="article-card sec text-center ">
   
   <div  >
           <h1 class="home-title pt-5">LEARN PROGRAMMING LAGUAGES </h1>
