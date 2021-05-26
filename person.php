@@ -27,7 +27,7 @@ class PersonDB{
                 }
     }
 
-    public function update($id,$articleName,$categorie,$Description,$Datedecreation,$Img,$Textz){
+    public function update($id,$articleName,$categorie,$Description,$Img,$Textz){
         try {
         $stmt=$this->db->prepare("UPDATE `articles` SET `ArticleName`=:name, `catégorie`=:categorie, `description`=:description, `datedecreation`= now(), `img`=:img, `text`=:text WHERE  `ID`=:id");
             $stmt->bindparam(':name',$articleName);
@@ -61,12 +61,12 @@ class PersonDB{
         $editRow = $stmt->fetch(PDO::FETCH_ASSOC);
         return $editRow;
     }
-
+  
 
    
                 
     public function dataview(){
-        $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE 1");
+        $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE  1");
         $stmt->execute();
             if ($stmt->rowCount()>0){
                 while($row=$stmt->fetch(PDO::FETCH_ASSOC)){         //to get the informtions in assoc array
@@ -89,8 +89,10 @@ class PersonDB{
                 }
             }
     }
-    public function articlesview(){
-    $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE 1");
+    public function articlesview($categorie){
+    $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE catégorie=:categorie ");
+    $stmt->bindparam(':categorie',$categorie);
+
     $stmt->execute();
         if ($stmt->rowCount()>0){
             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){         //to get the informtions in assoc array
@@ -109,7 +111,8 @@ class PersonDB{
         }
 }
     public function articleview($id){
-        $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE id=$id");
+        $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE ID=:id");
+        $stmt->bindparam(":id",$id);
         $stmt->execute();
             if ($stmt->rowCount()>0){
                 $row=$stmt->fetch(PDO::FETCH_ASSOC)         //to get the informtions in assoc array

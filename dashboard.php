@@ -20,25 +20,13 @@ if(isset($_POST['submit']) && isset($_FILES['Img'])){
   $articleName = $_POST['ArticleName'];
   $categorie = $_POST['catégorie'];
   $Description = $_POST['description'];
-  $Datedecreation = $_POST['datedecreation'];
-  $Textz = $_POST['textz'];
+  $Textz = trim($_POST['textz']);
 
 if ($person->creat($articleName,$categorie,$Description,$Datedecreation,$Img,$Textz)){
     header('Location: dashboard.php');
 
     
-if(isset($_POST['update-btn'])){
-  $id = $_GET['edit_id'];
-  $articleName = $_POST['ArticleName'];
-  $categorie = $_POST['catégorie'];
-  $Description = $_POST['description'];
-  $Datedecreation = $_POST['datedecreation'];
-  $Textz = $_POST['textz'];
 
-    if ($person->update($id,$articleName,$categorie,$Description,$Datedecreation,$Img,$Textz)){
-      header('Location: dashboard.php');
-  }
-}
 if (isset($_GET['edit_id'])) {
   $id = $_GET['edit_id'];
   extract($person->getID($id));

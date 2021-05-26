@@ -5,6 +5,8 @@ session_start();
 if ( !$_SESSION['login']){
   header('Location: login.php');
   die;
+
+ 
 }
 ?>
  
@@ -26,7 +28,7 @@ if ( !$_SESSION['login']){
               <img class="card-img-top" src="./ressources/imgs/cover.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <a href="articles.php" class="btn btn-primary">Go </a>
+                <a href="articles.php?categorie=front-end" class="btn btn-primary">Go </a>
               </div>
             </div>
         
@@ -36,7 +38,7 @@ if ( !$_SESSION['login']){
               <img class="card-img-top" src="./ressources/imgs/backend.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <a href="articles.php" class="btn btn-primary">Go </a>
+                <a href="articles.php?categorie=back-end" class="btn btn-primary">Go </a>
               </div>
             </div>
 

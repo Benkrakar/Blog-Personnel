@@ -7,6 +7,8 @@ if ( !$_SESSION['login']){
   header('Location: login.php');
   die;
 }
+$categorie = $_GET['categorie'];
+
 ?>
 
  <section class="article-card sec text-center ">
@@ -22,7 +24,8 @@ if ( !$_SESSION['login']){
     <div class=" row col-12 justify-content-md-center ">
       <div class="col-8 row ">
               
-      <?php $person->articlesview();?>
+      <?php $person->articlesview($categorie);?>
+      
       
 
               

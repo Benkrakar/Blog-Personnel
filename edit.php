@@ -9,16 +9,21 @@ if ( !$_SESSION['login']){
   die;
 }
     
-if(isset($_POST['update-btn'])){
+ 
+if(isset($_POST['update-btn']) && isset($_FILES['Img'])){
+  $Img =  $_FILES['Img']['name'];
+  $Img_size =  $_FILES['Img']['size'];
+  $tmp_name =  $_FILES['Img']['tmp_name'];
+  $Img_type = $_FILES['Img']['type'];
+  $error =  $_FILES['Img']['error'];
+
   $id = $_GET['edit_id'];
   $articleName = $_POST['ArticleName'];
   $categorie = $_POST['catégorie'];
   $Description = $_POST['description'];
-  $Datedecreation = $_POST['datedecreation'];
-  $Img = $_POST['img'];
-  $Textz = $_POST['textz'];
+  $Textz = trim($_POST['textz']);
 
-    if ($person->update($id,$articleName,$categorie,$Description,$Datedecreation,$Img,$Textz)){
+    if ($person->update($id,$articleName,$categorie,$Description,$Img,$Textz)){
       header('Location: dashboard.php');
   }
 }
@@ -36,7 +41,7 @@ if (isset($_GET['edit_id'])) {
   <div class="pt-5 ">
         <div class=" row  justify-content-center col my-auto">
             
-                  <form class="col-6 pt-5" method="POST" >
+                  <form class="col-6 pt-5" method="POST" enctype="multipart/form-data">
   
                   
                       <div class="articl-form ">
@@ -51,7 +56,7 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     <div class="articl-form mt-4">
                           <label for="recipient-name" class="col-form-label">article-img</label>
-                          <input type="file" name="Img" class="form-control" >
+                          <input type="file" name="Img" value="./ressources/imgs/<?php echo $img;?>" class="form-control" >
                       </div>
                       <div class="articl-form">
                       <textarea class="form-control mt-5" name="textz" ><?php echo $text;?></textarea>
