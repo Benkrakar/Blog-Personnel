@@ -8,7 +8,7 @@ if ( !$_SESSION['login']){
 }
 ?>
  
- <section class="about text-center ">
+ <section class="about text-center h-100">
   
   <div  >
           <h1 class="home-title pt-5">LEARN PROGRAMMING LAGUAGES </h1>
@@ -18,28 +18,33 @@ if ( !$_SESSION['login']){
         
       </div>
     </div>
-    <div class="d-flex align-items-lg-end h-75 card-items ">
-      <div class="d-flex justify-content-center col my-auto ">
-          <div class="col-6 row justify-content-end p-5 ">
-            <div class="card ">
+    <div class=" container  ">
+
+    <div class="row justify-content-center card-items">
+
+    <div class="card col-md m-4">
               <img class="card-img-top" src="./ressources/imgs/cover.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <a href="articles.php" class="btn btn-primary">Go </a>
               </div>
             </div>
-          </div>
+        
 
-          <div class="col-6 p-5 ">
-            <div class="card">
+          
+            <div class="card col-md m-4">
               <img class="card-img-top" src="./ressources/imgs/backend.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <a href="articles.php" class="btn btn-primary">Go </a>
               </div>
             </div>
-          </div>
-      </div>
+
+    </div>
+          
+            
+          
+      
     </div>
  </section>
 

@@ -38,10 +38,10 @@ if ($person->login($Username,$Password)){
           <div class="col-12 form-input ">
           <form  method="POST"  action="<?php echo $_SERVER['PHP_SELF']; ?>">
               <div class="form-group">
-              <input type="text" name="username" class="form-contol text-center" placeholder="username">
+              <input type="text" name="username" class="form-contol text-center" placeholder="username" required>
               </div>
               <div class="form-group">
-              <input type="password" name="password" class="form-contol text-center" placeholder="password">
+              <input type="password" name="password" class="form-contol text-center" placeholder="password" required>
               </div>
               <button type="submit" name="submit" class="btn login-btn btn-success mt-2">
               Login

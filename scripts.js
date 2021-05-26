@@ -3,3 +3,4 @@ button.addEventListener('click',() =>{
 
      alert('la suppression a été effectuée');
 });
+

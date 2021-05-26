@@ -13,11 +13,10 @@ class PersonDB{
     //------------------------------------------------------creat fct---------------------------------------------------------------------------------
     public function creat($articleName,$categorie,$Description,$Datedecreation,$Img,$Textz){ 
         try {
-            $stmt=$this->db->prepare("INSERT INTO `articles`(`ArticleName`, `catégorie`, `description`, `datedecreation`, `img`, `text`) VALUES (:name , :categorie , :description , :date , :img , :text)");
+            $stmt=$this->db->prepare("INSERT INTO `articles`(`ArticleName`, `catégorie`, `description`, `datedecreation`, `img`, `text`) VALUES (:name , :categorie , :description , now() , :img , :text)");
             $stmt->bindparam(':name',$articleName);
             $stmt->bindparam(':categorie',$categorie);
             $stmt->bindparam(':description',$Description);
-            $stmt->bindparam(':date',$Datedecreation);
             $stmt->bindparam(':text',$Textz);
             $stmt->bindparam(':img',$Img);
             $stmt->execute();
@@ -30,11 +29,10 @@ class PersonDB{
 
     public function update($id,$articleName,$categorie,$Description,$Datedecreation,$Img,$Textz){
         try {
-        $stmt=$this->db->prepare("UPDATE `articles` SET `ArticleName`=:name, `catégorie`=:categorie, `description`=:description, `datedecreation`=:date, `img`=:img, `text`=:text WHERE  `ID`=:id");
+        $stmt=$this->db->prepare("UPDATE `articles` SET `ArticleName`=:name, `catégorie`=:categorie, `description`=:description, `datedecreation`= now(), `img`=:img, `text`=:text WHERE  `ID`=:id");
             $stmt->bindparam(':name',$articleName);
             $stmt->bindparam(':categorie',$categorie);
             $stmt->bindparam(':description',$Description);
-            $stmt->bindparam(':date',$Datedecreation);
             $stmt->bindparam(':text',$Textz);
             $stmt->bindparam(':img',$Img);
          $stmt->bindparam(":id",$id);
@@ -63,6 +61,9 @@ class PersonDB{
         $editRow = $stmt->fetch(PDO::FETCH_ASSOC);
         return $editRow;
     }
+
+
+   
                 
     public function dataview(){
         $stmt=$this->db->prepare("SELECT * FROM `articles` WHERE 1");
@@ -76,7 +77,7 @@ class PersonDB{
                         <td><?php echo $row['ArticleName'];?></td>
                         <td><?php echo $row['catégorie'];?></td>
                         <td><?php echo $row['description'];?></td>
-                        <td><?php echo $row['datedecreation'];?></td>
+                        <td><?php echo date("d-m-Y", strtotime( $row['datedecreation']));?></td>
                         
                         <td>
                                 <a class="icon fa fa-edit" href="edit.php?edit_id=<?php echo $row['ID'];?>"></a>

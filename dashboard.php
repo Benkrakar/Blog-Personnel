@@ -89,9 +89,7 @@ if ($person->delete($id)){
                       <div class="articl-form mt-4">
                           <input type="text" name="description" class="form-control" id="recipient-name" placeholder="description" required>
                       </div>
-                      <div class="articl-form mt-4">
-                        <input type="text" name="datedecreation" class="form-control" placeholder="date de creation"  required>
-                    </div>
+                    
                       <div class="articl-form mt-4">
                           <label for="recipient-name" class="col-form-label">article-img</label>
                           <input type="file" name="Img" class="form-control"  >
