@@ -81,8 +81,9 @@ width: 17px;
 ---------------------------------------------start css of about page-------------------------------------------------------------------> */
 .about{
     background-color: #101820;
-    height: 100vh !important;
+    height: 100%;
     width: 100%;
+    padding-bottom: 10rem;
 }
 .about-section{
     padding-bottom: 9%;

@@ -1,9 +1,9 @@
      
       <!-- Footer -->
-      <footer class="page-footer font-small cyan darken-3 d-flex ">
+      <footer class="page-footer font-small cyan darken-3  d-flex ">
 
 <!-- Footer Elements -->
-<div class="container d-flex ">
+<div class="container  d-flex ">
 
   <!-- Grid row-->
 
