@@ -1,0 +1,250 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    color: #CACACA;
+    
+}
+h1,h2,h3,h4,h5{
+    font-weight: 700;
+}
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------start css of navbar section---------------------------------------------------------------> */
+.navbar-brand{
+    color: #7C8590;
+width: 17px;
+}
+.navbar {
+    background-color: #1D2732 !important;
+}
+.dropdown-menu{
+    background-color: #1D2732 !important;
+
+}
+.dropdown-item:hover{
+    background-color: #737A81  !important;
+
+}
+.navbar a{
+    color: #7C8590;
+    
+    
+}
+.navbar a:hover{
+    border-radius: 10px;
+    background-color:#737A81 ;
+    color: black !important;
+}
+
+.search {
+    background-color: #737A81;
+}
+.search:focus{
+    outline: none;
+    color: black;
+    background-color: #737A81 !important;
+}
+.search::placeholder {
+    color: black;
+  }
+.search-button{
+    background-color: #737A81;
+    color: black;
+    border: black;
+}
+.search-button:hover{
+    background-color: #101820 ;
+    color: #CACACA;
+}
+.icon{
+    color: blanchedalmond !important;
+    width: 1rem;
+    height: 1rem;
+}
+
+
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------End css of navbar section----------------------------------------------------------------> */
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------start css of footrt section---------------------------------------------------------------> */
+.page-footer{
+    background-color: #1D2732;
+}
+.page-footer i {
+    color: white;
+}
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------end css of footrt section------------------------------------------------------------------> */
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------start css of about page-------------------------------------------------------------------> */
+.about{
+    background-color: #101820;
+    height: 100vh !important;
+    width: 100%;
+}
+.about-section{
+    padding-bottom: 9%;
+    width: 100%;
+}
+.about-title{
+    color: #CACACA;
+}
+.navbar-toggler i{
+    color: #CACACA !important;
+}
+
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------end css of about page------------------------------------------------------------------> */
+
+
+
+
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------start css of login page-------------------------------------------------------------------> */
+
+
+.login-section{
+    background-image: url(./ressources/imgs/backgroundlogin.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.login-img img {
+    height: 190px;
+    width: 190px;
+}
+.form-input{
+    margin-top:auto;
+}
+.login-title{
+color: #C4B1B1;
+}
+.login-form{
+position: absolute;
+    height: 40rem;
+    width: 30rem;
+    background-color: #1D2732;
+    opacity: .3;
+    border-radius: 6%;
+}
+
+.form-group input{
+    width: 25%;
+    border: none;
+    border-radius: 1rem;
+    background-color: #36404D;
+    color: blanchedalmond;
+    opacity: .8;
+}
+
+input::-webkit-input-placeholder {
+    color: #C4B1B1;
+    opacity: .4;
+}
+
+input:-moz-placeholder {
+    color: #C4B1B1;
+}
+.login-btn{
+    border: none;
+    width: 10%;
+    border-radius: 2rem;
+    color: black;
+    background-color: #C4B1B1;
+}
+.login-btn:hover{
+ background-color: #28323F;
+}
+/* <!--------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------end css of login page---------------------------------------------------------------------> */
+
+.card-items  img{
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+}
+.card{
+    width: 30rem;
+    background-color: #1D2732;
+    border: solid 1px #707070;
+    border-radius: 1rem;
+
+}
+.card a {
+    background-color: #101820;
+    border: none;
+    width: 30%;
+}
+
+.article-sec{
+    width: 80rem;
+    height: 45rem;
+    background-color: #1D2732;
+    border: solid 1px #707070;
+    display: block;
+    overflow-y: auto;
+}
+.article-sec div{
+    display: block;
+}
+.article-img img{
+    width: 120px;
+    height: 120px;
+    border-radius: 2rem;
+}
+
+
+
+
+
+
+.table > thead > tr > th ,  td{
+    border-top:none ;
+    border-bottom:1px solid #707070;
+  }
+
+
+.login-informations {
+    background-color: #1D2732;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    color: #E4E4E4;
+    
+}
+.articl-btn{
+    background-color: #28323F;
+    border: none;
+}
+
+.form-control{
+    border: none;
+    background-color: #36404D;
+    color: blanchedalmond;
+}
+.form-control:focus{
+    border: none;
+    background-color: #36404D;
+    color: blanchedalmond;
+}
+
+
+.article-card{
+    background-color: #101820;
+    height: 100%;
+    width: 100%;
+}
+
+.articles > img{
+border-radius: 1rem;
+}
+
+
+
+
