@@ -81,7 +81,7 @@ class PersonDB{
                         
                         <td>
                                 <a class="icon fa fa-edit" href="edit.php?edit_id=<?php echo $row['ID'];?>"></a>
-                                <a  href="delete.php?delete_id=<?php echo $row['ID'];?>" id="button"  class="icon fa fa-trash pl-2" > </a>
+                                <a  href="delete.php?delete_id=<?php echo $row['ID'];?>" data-id="<?php echo $row['ID'];?>" id="button"  class="icon fa fa-trash pl-2 delete-person" > </a>
                                                 
                         </td>
                     </tr>

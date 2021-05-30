@@ -11,7 +11,9 @@ if ( !$_SESSION['login']){
     
  
 if(isset($_POST['update-btn']) && isset($_FILES['Img'])){
-  $Img =  $_FILES['Img']['name'];
+  $id = $_GET['edit_id'];
+  extract($person->getID($id));
+  $Img =  empty($_FILES['Img']['name']) ? $img : $_FILES['Img']['name'];
   $Img_size =  $_FILES['Img']['size'];
   $tmp_name =  $_FILES['Img']['tmp_name'];
   $Img_type = $_FILES['Img']['type'];
@@ -56,7 +58,7 @@ if (isset($_GET['edit_id'])) {
                     </div>
                     <div class="articl-form mt-4">
                           <label for="recipient-name" class="col-form-label">article-img</label>
-                          <input type="file" name="Img" value="./ressources/imgs/<?php echo $img;?>" class="form-control" >
+                          <input type="file" name="Img" class="form-control" >
                       </div>
                       <div class="articl-form">
                       <textarea class="form-control mt-5" name="textz" ><?php echo $text;?></textarea>

@@ -5,7 +5,7 @@ include_once('head.php');
 ?>
 
     <nav class="navbar  navbar-expand-lg ">
-        <span class="navbar-brand mr-5  ">LOGO</span>
+        <span class="navbar-brand mr-5 ">LOGO</span>
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars" ></i>
 
@@ -20,8 +20,8 @@ include_once('head.php');
                 Technologies
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="articles.php">Front-end</a>
-                <a class="dropdown-item" href="articles.php">Back-end</a>               
+                <a class="dropdown-item" href="articles.php?categorie=front-end">Front-end</a>
+                <a class="dropdown-item" href="articles.php?categorie=back-end">Back-end</a>               
             </li>
             <li class="nav-item">
               <a class="nav-link disabled " href="./about.php">About</a>

@@ -10,10 +10,10 @@ if ( !$_SESSION['login']){
 }
 ?>
  
- <section class="about text-center h-100">
+ <section class="about  text-center h-100">
   
   <div  >
-          <h1 class="home-title pt-5">LEARN PROGRAMMING LAGUAGES </h1>
+          <h1 class="homePage home-title pt-5">LEARN PROGRAMMING LAGUAGES </h1>
           <div class="text-justify pl-5 pr-5 pt-5 home-text">
            <h5> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dignissimos quisquam rerum aliquam quasi vitae nisi expedita debitis cupiditate asperiores optio eveniet labore, vel beatae!</h5>
           </div>

@@ -10,7 +10,7 @@ h1,h2,h3,h4,h5{
 ---------------------------------------------start css of navbar section---------------------------------------------------------------> */
 .navbar-brand{
     color: #7C8590;
-
+width: 17px;
 }
 .navbar {
     background-color: #1D2732 !important;
@@ -25,6 +25,7 @@ h1,h2,h3,h4,h5{
 }
 .navbar a{
     color: #7C8590;
+    
     
 }
 .navbar a:hover{
