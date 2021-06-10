@@ -123,7 +123,7 @@ class PersonDB{
                 </div>
                 <div class="d-flex justify-content-center col my-auto ">
                         <div class="article-sec mt-5 row  p-3">
-                        <div class="article-img  d-flex">
+                        <div class="article-img justify-content-sm-between d-flex">
                             <img src="./ressources/imgs/<?php echo $row['img'];?>" alt="">
                             <p class="text-justify pl-3"><?php echo $row['description'];?> </p>
                         </div>
