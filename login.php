@@ -56,6 +56,8 @@ if ($person->login($Username,$Password)){
  </div>
   </div>
 </section>
+<!-- <script src="./scripts.js"></script> -->
+
 
 <?php 
 include_once('foot.php');

@@ -142,15 +142,13 @@ if ($person->delete($id)){
                               <th scope="col">ID</th>
                               <th scope="col">article name</th>
                               <th scope="col">catégorie</th>
-                              <th scope="col">description</th>
+                              <th scope="col">article img</th>
                               <th scope="col">date de creation</th>
                               <th scope="col" >action</th>
                               </tr>
                               <?php $person->dataview();?>
+                          </thead>
 
-                             
-            
-                          </tbody>
                       </table>
                       
                   </div>
