@@ -244,8 +244,21 @@ input:-moz-placeholder {
 
 .articles > img{
 border-radius: 1rem;
+height: 15rem ;
+
+}
+.dashImg > img{
+width: 57px;
+height: 61px;
+
+}
+.table td, .table th{
+    vertical-align: baseline;
 }
 
+.table thead th{
+    vertical-align: baseline;
 
+}
 
 

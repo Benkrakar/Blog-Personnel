@@ -76,12 +76,12 @@ class PersonDB{
                         <th ><?php echo $row['ID'];?></th>
                         <td><?php echo $row['ArticleName'];?></td>
                         <td><?php echo $row['catégorie'];?></td>
-                        <td><?php echo $row['description'];?></td>
+                        <td class="dashImg"><img src="./ressources/imgs/<?php echo $row['img'];?>" alt=""></td>
                         <td><?php echo date("d-m-Y", strtotime( $row['datedecreation']));?></td>
                         
                         <td>
                                 <a class="icon fa fa-edit" href="edit.php?edit_id=<?php echo $row['ID'];?>"></a>
-                                <a  href="delete.php?delete_id=<?php echo $row['ID'];?>" data-id="<?php echo $row['ID'];?>" id="button"  class="icon fa fa-trash pl-2 delete-person" > </a>
+                                <a  href="delete.php?delete_id=<?php echo $row['ID'];?>" data-id="<?php echo $row['ID'];?>" id="delete-person"  class="icon fa fa-trash pl-2 delete-person" > </a>
                                                 
                         </td>
                     </tr>
@@ -98,7 +98,7 @@ class PersonDB{
             while($row=$stmt->fetch(PDO::FETCH_ASSOC)){         //to get the informtions in assoc array
                 ?>
                     <div class="card articles ml-3 mt-4 mb-4" style="width: 18rem;">
-                <img class="card-img-top" src="./ressources/imgs/<?php echo $row['img'];?>" alt="Card image cap">
+                <img class="card-img-top " src="./ressources/imgs/<?php echo $row['img'];?>" alt="Card image cap">
                 
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['ArticleName'];?></h5>
@@ -123,7 +123,7 @@ class PersonDB{
                 </div>
                 <div class="d-flex justify-content-center col my-auto ">
                         <div class="article-sec mt-5 row  p-3">
-                        <div class="article-img justify-content-sm-between d-flex">
+                        <div class="article-img  d-flex">
                             <img src="./ressources/imgs/<?php echo $row['img'];?>" alt="">
                             <p class="text-justify pl-3"><?php echo $row['description'];?> </p>
                         </div>

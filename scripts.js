@@ -4,11 +4,12 @@ const userInput = document.getElementById('username');
 const passInput = document.getElementById('password');
 
 
-
-loginbtn.addEventListener('click',(e)=>{
+// if(loginbtn){
+// console.log("dk")
+loginbtn?.addEventListener('click',(e)=>{
  user = userInput.value
  pass = passInput.value
- 
+
 
   if (user=="" & pass=="") {
     e.preventDefault()
@@ -29,6 +30,8 @@ loginbtn.addEventListener('click',(e)=>{
    
   }
 })
+// }
+
 
 
 

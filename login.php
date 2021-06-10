@@ -23,7 +23,7 @@ if ($person->login($Username,$Password)){
 
 ?>
 <section class="login-section">
-  <div class="d-flex h-75 w-100  ">
+  <div class="d-flex h-75   ">
     <div class="d-flex justify-content-center col my-auto">
       <div class="login-form">
       </div>

@@ -27,7 +27,7 @@ if ( !$_SESSION['login']){
     <div class="card col-md m-4">
               <img class="card-img-top" src="./ressources/imgs/cover.jpg" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Frontend articles</h5>
                 <a href="articles.php?categorie=front-end" class="btn btn-primary">Go </a>
               </div>
             </div>
@@ -37,7 +37,7 @@ if ( !$_SESSION['login']){
             <div class="card col-md m-4">
               <img class="card-img-top" src="./ressources/imgs/backend.png" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Backend articles</h5>
                 <a href="articles.php?categorie=back-end" class="btn btn-primary">Go </a>
               </div>
             </div>
